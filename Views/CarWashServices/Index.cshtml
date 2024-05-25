@@ -1,0 +1,83 @@
+@model IEnumerable<CarWashApp.Models.CarWashService>
+
+<style>
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: auto;
+        background-color: white;
+        padding: 30px 40px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+    }
+
+    h2 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: lighter;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #007bff;
+        color: white;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        margin-right: 15px;
+        border: 1px solid #007bff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    a:hover {
+        color: #fff;
+        background-color: #007bff;
+    }
+</style>
+
+<div class="container">
+    <h2>Service List</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Service Name</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ServiceName</td>
+                    <td>@item.Price</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

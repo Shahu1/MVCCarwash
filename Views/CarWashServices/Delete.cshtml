@@ -1,0 +1,26 @@
+@model CarWashApp.Models.CarWashService
+
+<h2>Delete</h2>
+
+<h4>Car Wash Service</h4>
+<hr />
+<dl class="row">
+    <dt class="col-sm-2">
+        Service Name
+    </dt>
+    <dd class="col-sm-10">
+        @Model.ServiceName
+    </dd>
+    <dt class="col-sm-2">
+        Price
+    </dt>
+    <dd class="col-sm-10">
+        @Model.Price
+    </dd>
+</dl>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Delete" class="btn btn-danger" /> |
+    <a asp-action="Index">Back to List</a>
+</form>

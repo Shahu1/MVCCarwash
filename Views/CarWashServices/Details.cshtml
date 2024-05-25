@@ -1,0 +1,76 @@
+@model CarWashApp.Models.CarWashService
+
+<style>
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: auto;
+        background-color: white;
+        padding: 30px 40px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+    }
+
+    h2 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: lighter;
+    }
+
+    .details {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .details dt {
+        color: #6c757d;
+        font-weight: bold;
+    }
+
+    .details dd {
+        color: #333;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        margin-right: 15px;
+        border: 1px solid #007bff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    a:hover {
+        color: #fff;
+        background-color: #007bff;
+    }
+</style>
+
+<div class="container">
+    <h2>Service Details</h2>
+
+    <div>
+        <h4>@Model.ServiceName</h4>
+        <hr />
+        <div class="details">
+            <dt>Service Name</dt>
+            <dd>@Model.ServiceName</dd>
+        </div>
+        <div class="details">
+            <dt>Price</dt>
+            <dd>@Model.Price</dd>
+        </div>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>

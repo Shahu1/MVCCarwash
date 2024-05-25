@@ -1,0 +1,63 @@
+@model CarWashApp.Models.CarWashService
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Create New Car Wash Service</h2>
+                    <form asp-action="Create" class="needs-validation" novalidate>
+                        <div class="form-group">
+                            <label asp-for="ServiceName" class="form-label">Service Name</label>
+                            <input asp-for="ServiceName" class="form-control" required>
+                            <div class="invalid-feedback">Please provide a service name.</div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Price" class="form-label">Price</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                </div>
+                                <input asp-for="Price" class="form-control" required>
+                                <div class="invalid-feedback">Please provide a valid price.</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Create</button>
+                        </div>
+                    </form>
+                    <div class="text-center">
+                        <a asp-action="Index" class="btn btn-link">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+    </script>
+}
