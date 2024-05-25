@@ -62,22 +62,50 @@
             <tr>
                 <th>Service Name</th>
                 <th>Price</th>
-                <th></th>
+                <th>Details</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.ServiceName</td>
-                    <td>@item.Price</td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                </tr>
-            }
+            <tr>
+                <td>Basic Wash</td>
+                <td>$10</td>
+                <td>
+                    <ul>
+                        <li>Exterior wash</li>
+                        <li>Hand dry</li>
+                        <li>Wheel cleaning</li>
+                        <li>Tire shine</li>
+                        <li>Window cleaning (outside only)</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Deluxe Wash</td>
+                <td>$20</td>
+                <td>
+                    <ul>
+                        <li>Everything in Basic Wash</li>
+                        <li>Interior vacuuming</li>
+                        <li>Dashboard dusting and cleaning</li>
+                        <li>Window cleaning (inside and outside)</li>
+                        <li>Air freshener</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Premium Wash</td>
+                <td>$35</td>
+                <td>
+                    <ul>
+                        <li>Everything in Deluxe Wash</li>
+                        <li>Seat cleaning and conditioning (leather or fabric)</li>
+                        <li>Carpet shampooing</li>
+                        <li>Detailed hand waxing</li>
+                        <li>Undercarriage wash</li>
+                        <li>Rain repellent treatment for windshield</li>
+                    </ul>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>

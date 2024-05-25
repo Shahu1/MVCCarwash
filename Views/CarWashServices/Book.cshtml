@@ -7,33 +7,72 @@
         background-image: url('/Images/carwash.jpg');
         background-repeat: no-repeat;
         background-size: cover;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
     }
 
     .container {
+        max-width: 500px;
+        margin: 100px auto;
         background-color: rgba(255, 255, 255, 0.8);
-        padding: 20px;
-        border-radius: 15px;
-        margin-top: 50px;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
     }
 
     h1 {
         color: #333;
         text-align: center;
+        margin-bottom: 30px;
+        font-weight: lighter;
     }
 
     .form-group {
-        margin-bottom: 15px;
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        padding: 10px;
+        width: 100%;
     }
 
     .btn-primary {
         display: block;
         width: 100%;
+        border-radius: 5px;
+        padding: 12px 0;
+        background-color: #0056b3;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #00408a;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 </style>
 
-<div class="container mt-5">
+<div class="container">
     <h1>Book a Car Wash</h1>
-    <form>
+    <form id="carWashForm">
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" id="name" placeholder="Enter your name">
@@ -58,6 +97,22 @@
                 <option>Premium Wash</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="button-group">
+            <a href="https://rzp.io/l/Y4fwNu6D" class="pay_now">
+                <input type="button" value="Pay Now" class="btn btn-primary pay_now" />
+            </a>
+        </div><br/
+        <div class="button-group">
+            <input type="button" value="Book Now" class="btn btn-success" onclick="submitForm()" />
+        </div>
     </form>
+    <script>
+        function submitForm() {
+            // Here you can add validation logic if needed
+            // Simulating a successful submission with a popup
+            alert("Your car wash has been booked successfully!");
+            // After the success popup, submit the form
+            document.getElementById("carWashForm").submit();
+        }
+    </script>
 </div>

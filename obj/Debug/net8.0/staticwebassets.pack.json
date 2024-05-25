@@ -5,12 +5,20 @@
       "PackagePath": "staticwebassets\\CarWashApp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\shmaneri\\Desktop\\Temp\\CarWashApp\\wwwroot\\Images\\Carwash_car.jpg",
+      "PackagePath": "staticwebassets\\Images\\Carwash_car.jpg"
+    },
+    {
       "Id": "C:\\Users\\shmaneri\\Desktop\\Temp\\CarWashApp\\wwwroot\\Images\\Picture_wash.jpg",
       "PackagePath": "staticwebassets\\Images\\Picture_wash.jpg"
     },
     {
       "Id": "C:\\Users\\shmaneri\\Desktop\\Temp\\CarWashApp\\wwwroot\\Images\\car.jpg",
       "PackagePath": "staticwebassets\\Images\\car.jpg"
+    },
+    {
+      "Id": "C:\\Users\\shmaneri\\Desktop\\Temp\\CarWashApp\\wwwroot\\Images\\carservice.jpg",
+      "PackagePath": "staticwebassets\\Images\\carservice.jpg"
     },
     {
       "Id": "C:\\Users\\shmaneri\\Desktop\\Temp\\CarWashApp\\wwwroot\\Images\\carwash.jpg",

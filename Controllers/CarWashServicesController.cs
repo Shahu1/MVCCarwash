@@ -5,6 +5,9 @@ using CarWashApp.Models;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 namespace CarWashApp.Controllers
 {
@@ -173,6 +176,49 @@ namespace CarWashApp.Controllers
         {
             return View();
         }
+
+
+
+          // POST: Account/Login
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(Login model)
+        {
+            if (ModelState.IsValid)
+            {
+                // For demonstration purposes, we're using a simple hardcoded check.
+                // In a real application, you should validate the user against a database.
+                if (model.Username == "admin" && model.Password == "password")
+                {
+                    var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, model.Username)
+                    };
+
+                    var claimsIdentity = new ClaimsIdentity(
+                        claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                    await HttpContext.SignInAsync(
+                        CookieAuthenticationDefaults.AuthenticationScheme,
+                        new ClaimsPrincipal(claimsIdentity));
+
+                    return RedirectToAction("Index", "CarWashServices");
+                }
+                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+            }
+            return View(model);
+        }
+
+                public IActionResult LoginAndRedirect(Login model)
+{
+    // Handle login here...
+
+    // Redirect to the home page
+    return RedirectToAction("Index", "Home");
+}
+
+        // GET: Account/Logout
+    
         
     }
 }
